@@ -21,6 +21,8 @@ function init() {
     beta = document.getElementById("beta");
     gamma = document.getElementById("gamma");
 
+    beginSensing();
+
     return true;
 }
 function draw() {
@@ -38,7 +40,6 @@ function beginSensing() {
         alpha.textContent = event.alpha;
         beta.textContent = event.beta;
         gamma.textContent = event.gamma;
-
-        
     }, false);
+    console.log("began Sensing.");
 }
