@@ -40,5 +40,5 @@ function beginSensing() {
         gamma.textContent = event.gamma;
 
         
-    }
+    }, false);
 }
