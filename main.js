@@ -11,7 +11,6 @@ window.onload = function() {
     draw();
     //list.shift();
     //list.push({year: '2015', value: 0});
-    drawGraph('graph1', lists['alpha']);
 };
 function init() { // canvasを用意
     graph1 = document.getElementById("graph1");
@@ -27,6 +26,9 @@ function init() { // canvasを用意
 
     beginSensing();
 
+    // 一定周期でグラフを更新する
+    setInterval("draw()", 300);
+
     return true;
 }
 function draw() {
@@ -37,6 +39,9 @@ function draw() {
     ctx.moveTo(20, 20);
     ctx.lineTo(120, 20);
     ctx.stroke();
+
+    document.getElementById('graph1').innerHTML = '';
+    drawGraph('graph1', lists['alpha']);
 }
 
 function beginSensing() {
