@@ -16,6 +16,7 @@
 <script src="main.js"></script>
 </head>
 <body>
+  <h1>すいちょくスマホ</h1>
   <div id="info">
     <div id="alpha"></div>
     <div id="beta"></div>
