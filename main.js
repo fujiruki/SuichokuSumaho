@@ -41,7 +41,7 @@ function draw() {
     ctx.stroke();
 
     document.getElementById('graph1').innerHTML = '';
-    drawGraph('graph1', lists['alpha']);
+    drawGraph('graph1', lists['beta']);
 }
 
 function beginSensing() {
@@ -52,7 +52,7 @@ function beginSensing() {
 
         // グラフ表示用に保存
         var msec = (new Date).getTime();    // 現在時刻のミリ秒表現
-        addValue('alpha', {time: msec, value: event.alpha});
+        addValue('beta', {time: msec, value: event.beta});
     }, false);
     console.log("began Sensing.");
 }
