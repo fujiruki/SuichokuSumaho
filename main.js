@@ -32,7 +32,7 @@ function init() { // canvasを用意
     beginSensing();
 
     // 一定周期でグラフを更新する
-    setInterval("draw()", 300);
+    setInterval("draw()", 800);
 
     return true;
 }
