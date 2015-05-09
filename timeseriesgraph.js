@@ -1,5 +1,6 @@
 // 時系列のデータを保持できるグラフのクラス
 function TimeSeriesGraph(len, elemID) {
+    console.log("TimeSeriesGraph's constructor");
     this.list = []; // 二列の二次元配列[time][value]
     this.graphElem = false; // グラフを描画するDOM要素(div)
 
