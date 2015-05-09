@@ -21,7 +21,7 @@ function init() { // canvasを用意
 
     // データ格納、表示クラスのインスタンスを生成
     jyro['alpha'] = new TimeSeriesGraph(GRAPH_LEN, 'graph1');
-    jyro['beta']  = new TimeSeriesGraph(GRAPH_LEN, 'graph1');
+    jyro['beta']  = new TimeSeriesGraph(GRAPH_LEN, 'graph2');
     jyro['gamma'] = new TimeSeriesGraph(GRAPH_LEN, 'graph1');
 
     // ジャイロセンサ表示部を用意

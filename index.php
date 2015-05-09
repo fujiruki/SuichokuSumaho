@@ -28,6 +28,7 @@
     <div id="gamma"></div>
   </div>
   <div id="graph1" style="height:200px; width:400px;"></div>
+  <div id="graph2" style="height:200px; width:400px;"></div>
   <div id="visualize">
     <canvas id="canvas1" width="100" height="100"></canvas>
   </div>
