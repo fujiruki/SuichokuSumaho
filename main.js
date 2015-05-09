@@ -1,6 +1,7 @@
 var canvas;
 var alpha, beta, gamma;
 
+var GRAPH_LEN = 100;
 var jyro = [];
 
 
@@ -11,8 +12,6 @@ window.onload = function() {
         // TODO:canvasが使えないよってメッセージを出したい
     }
     draw();
-    //list.shift();
-    //list.push({year: '2015', value: 0});
 };
 function init() { // canvasを用意
     canvas = document.getElementById("canvas1");
@@ -33,11 +32,12 @@ function init() { // canvasを用意
     beginSensing();
 
     // 一定周期でグラフを更新する
-    //setInterval("draw()", 300);
+    setInterval("draw()", 300);
 
     return true;
 }
 function draw() {
+    console.log("draw()");
     var ctx = canvas.getContext('2d');
 
     // 四角形を描く
@@ -49,7 +49,6 @@ function draw() {
     document.getElementById('graph1').innerHTML = '';
     
     jyro['beta'].redrawGraph();
-    //drawGraph('graph1', lists['beta']);
 }
 
 function beginSensing() {
