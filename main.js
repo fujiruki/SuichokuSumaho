@@ -1,6 +1,8 @@
 var canvas;
 var alpha, beta, gamma;
 
+var jyro = [];
+
 
 
 window.onload = function() {
@@ -13,11 +15,15 @@ window.onload = function() {
     //list.push({year: '2015', value: 0});
 };
 function init() { // canvasを用意
-    graph1 = document.getElementById("graph1");
     canvas = document.getElementById("canvas1");
     if ( ! canvas || ! canvas.getContext ) {
         return false;
     }
+
+    // データ格納、表示クラスのインスタンスを生成
+    jyro['alpha'] = new TimeSeriesGraph(GRAPH_LEN, 'graph1');
+    jyro['beta']  = new TimeSeriesGraph(GRAPH_LEN, 'graph1');
+    jyro['gamma'] = new TimeSeriesGraph(GRAPH_LEN, 'graph1');
 
     // ジャイロセンサ表示部を用意
     alpha = document.getElementById("alpha");
@@ -27,7 +33,7 @@ function init() { // canvasを用意
     beginSensing();
 
     // 一定周期でグラフを更新する
-    setInterval("draw()", 300);
+    //setInterval("draw()", 300);
 
     return true;
 }
@@ -41,7 +47,9 @@ function draw() {
     ctx.stroke();
 
     document.getElementById('graph1').innerHTML = '';
-    drawGraph('graph1', lists['beta']);
+    
+    jyro['beta'].redrawGraph();
+    //drawGraph('graph1', lists['beta']);
 }
 
 function beginSensing() {
@@ -52,7 +60,7 @@ function beginSensing() {
 
         // グラフ表示用に保存
         var msec = (new Date).getTime();    // 現在時刻のミリ秒表現
-        addValue('beta', {time: msec, value: event.beta});
+        jyro['beta'].addValue(msec, event.beta);
     }, false);
     console.log("began Sensing.");
 }
